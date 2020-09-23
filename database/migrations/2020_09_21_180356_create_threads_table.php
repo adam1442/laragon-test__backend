@@ -20,9 +20,9 @@ class CreateThreadsTable extends Migration
             $table->text('content');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('channel_id')->constrained()->onDelete('cascade');
-            
+
             // Best Answer Id
-            $table->foreignId('answer_id')->constrained()->onDelete('cascade');
+            $table->unsignedBigInteger('best_answer_id');
             $table->boolean('flag')->default(1);
             $table->timestamps();
         });

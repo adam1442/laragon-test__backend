@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
             $table->integer('score')->default(0);
             $table->boolean('flag')->default(1);
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
             $table->timestamps();
         });
     }
